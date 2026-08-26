@@ -1,0 +1,12 @@
+---
+description: architecture.md is the source of truth for this project's structure and recomposition targets.
+alwaysApply: true
+---
+
+# Architecture source of truth
+
+Treat [architecture.md](../../architecture.md) as the source of truth for architecture plans, canonical paths, and how SWE is recomposed.
+
+- Canonical orchestration lives in `.cursor/skills/swe/SKILL.md` and `.cursor/agents/swe-module-builder.md`.
+- Recompose via `.cursor/skills/recompose/SKILL.md`. Write generated artifacts only under `dist/`.
+- Do not paraphrase the canonical SWE skill or module-builder agent. Edit source, then recompose.
