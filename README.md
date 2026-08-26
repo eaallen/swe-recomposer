@@ -1,22 +1,18 @@
 # swe-recomposer
 
-Canonical **SWE** skill + **swe-module-builder** subagent, plus Cursor-driven recomposition into:
+This is my swe project (name to be refactored).
 
-- **Skills only** — one skill, no named subagents
-- **Single prompt** — paste into Grok, Meta.ai, or similar
+Bassically, I am trying to come up with my own way of working with AI to build software. I think the key is to make AI break down its work into self containted modules that can be tested and verifed to work. This allows me to focus on reviewing what the software actaully does instead of just reiviewing code. My hope is that by making agents use TDD (test dirven development), that they will be able to self correct most of the errors I have seen while tryign to build with AI. 
 
-`architecture.md` is the source of truth for how this repo is laid out.
+So I am putting together my documents (skills, subagents) in this project to allow me to develop them. We then use the recompose skill to recompeose my docs for different platfroms, eg platforms that onlly support skills or just prompts. 
 
-## Canonical (Cursor)
+## Structure
 
-| What | Path |
-|---|---|
-| Tech-lead orchestrator | `.cursor/skills/swe/SKILL.md` |
-| Isolated TDD builder | `.cursor/agents/swe-module-builder.md` |
-| Recompose workflow | `.cursor/skills/recompose/SKILL.md` |
-| Review rubric snapshot | `source/review/thermo-nuclear-code-quality-review.md` |
+My personal drafts can be found in the `src` folder. Here, I am putting my documents, orginally writen for cursor (since i know it best). 
 
-In Cursor, `@swe` (or open that skill) to run the full skill + subagent flow. The builder is a project agent named `swe-module-builder`.
+Inside the src/swe direcroty is where the main action is. 
+
+There is also src/review directory which offer some supporting documents. 
 
 ## Recompose
 
@@ -29,12 +25,14 @@ Ask Cursor, for example:
 
 That reads the canonical files and overwrites:
 
-| Target | Path |
-|---|---|
+
+| Target      | Path                            |
+| ----------- | ------------------------------- |
 | Skills only | `dist/skills-only/swe/SKILL.md` |
-| Portable | `dist/prompts/portable.md` |
-| Grok | `dist/prompts/grok.md` |
-| Meta.ai | `dist/prompts/meta-ai.md` |
+| Portable    | `dist/prompts/portable.md`      |
+| Grok        | `dist/prompts/grok.md`          |
+| Meta.ai     | `dist/prompts/meta-ai.md`       |
+
 
 Copy `dist/skills-only/swe/` into another project’s `.cursor/skills/` to use SWE without the agent. Copy a prompt file into Grok or Meta.ai as the system/first message.
 
