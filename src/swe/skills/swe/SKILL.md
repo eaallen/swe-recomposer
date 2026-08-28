@@ -28,11 +28,11 @@ The key is that the user is thinking in a modular way and you are building small
   1. If the user does not have any, help them get started.
     1. In three questions or less, understand the goal of their project
     2. Then provide your suggestions on what modules they should think about. It is important for the user to actually do the thinking on this, so do not seed their thoughts with your own preferences. Just help get the ball rolling
-2. Create an overarching ++[architecture.md](http://architecture.md)++ based off of the modules and documents the user has given you
+2. Create an overarching architecture.md based off of the modules and documents the user has given you
   1. Collaborate with the user
   2. Get users explicit permission to continue before moving onto the next step
-3. Ensure the project has a cursor rule that references the ++[architecture.md](http://architecture.md)++ as the source of truth document for architecture plans.
-4. Create a plan for each module document, also relying on the ++[architecture.md](http://architecture.md)++ so modules can work together.  Must include the following in each plan:
+3. Ensure the project has a cursor rule that references the  as the source of truth document for architecture plans.
+4. Create a plan for each module document, also relying on the architecture.md so modules can work together.  Must include the following in each plan:
   1. Purpose
   2. Public API (exact function signatures / interfaces)
   3. Dependencies (must be interfaces only)
