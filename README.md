@@ -1,6 +1,6 @@
-# swe-recomposer
+# skill-recomposer
 
-This is my swe project (name to be refactored).
+This is my skill recomposer. SWE is the first skill I’m putting through it.
 
 Bassically, I am trying to come up with my own way of working with AI to build software. I think the key is to make AI break down its work into self containted modules that can be tested and verifed to work. This allows me to focus on reviewing what the software actaully does instead of just reiviewing code. My hope is that by making agents use TDD (test dirven development), that they will be able to self correct most of the errors I have seen while tryign to build with AI. 
 

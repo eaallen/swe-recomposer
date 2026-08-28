@@ -1,10 +1,10 @@
 # Architecture
 
-This file is the source of truth for how **swe-recomposer** is structured and how artifacts are produced.
+This file is the source of truth for how **skill-recomposer** is structured and how artifacts are produced.
 
 ## Purpose
 
-Keep the Cursor **swe** skill and **swe-module-builder** subagent as the canonical orchestration for modular TDD builds. From that same source, recompose into:
+Hold Cursor skills (and companion agents) as canonical source, then recompose them for other runtimes. Currently that skill is **swe** + **swe-module-builder**. From that same source, recompose into:
 
 1. **Skills only** — one Cursor skill (no named subagents) that a single agent can follow.
 2. **Single prompt** — one portable prompt a human can paste into Grok, Meta.ai, or similar.
@@ -55,6 +55,6 @@ Regenerate these by invoking the **recompose** skill. Do not hand-edit `dist/` u
 
 ## Non-goals
 
-- This repo is not a compiler or a package that “runs” SWE. It is source + recomposition.
+- This repo is not a compiler or a package that “runs” a skill. It is source + recomposition.
 - Do not invent a different software process for Grok/Meta.ai. Translate the same process.
 - Do not silently drop sign-off gates to make the prompt shorter.
