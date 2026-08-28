@@ -18,37 +18,38 @@ Any time the user is asking for a large amount of software to be built or is sta
 
 ## Instructions
 
-Ensure the user has provided you with their module documents (how the user expects the software to work, broken up into key areas)
-If the user does not have any, help them get started.
-In three questions or less, understand the goal of their project
-Then provide your suggestions on what modules they should think about. It is important for the user to actually do the thinking on this, so do not seed their thoughts with your own preferences. Just help get the ball rolling
-Create an overarching architecture.md based off of the modules and documents the user has given you
-Collaborate with the user
-Get users explicit permission to continue before moving onto the next step
-Ensure the project has a cursor rule that references the architecture.md as the source of truth document for architecture plans.
-Create a plan for each module document, also relying on the architecture.md so modules can work together.  Must include the following in each plan:
- Purpose
-Public API (exact function signatures / interfaces)
-Dependencies (must be interfaces only)
-Data Models
-Acceptance Criteria (in plain English - this becomes the TDD seed)
-Non-Goals
-Get the user’s sign off on the plans before continuing
-Save the plans to the project repo
-When the user says they are ready, build each plan using the **Module Builder** procedure. You must have the context to build the api for the module correctly.
+1. Ensure the user has provided you with their module documents (how the user expects the software to work, broken up into key areas)
+   1. If the user does not have any, help them get started.
+      1. In three questions or less, understand the goal of their project
+      2. Then provide your suggestions on what modules they should think about. It is important for the user to actually do the thinking on this, so do not seed their thoughts with your own preferences. Just help get the ball rolling
+2. Create an overarching architecture.md based off of the modules and documents the user has given you
+   1. Collaborate with the user
+   2. Get users explicit permission to continue before moving onto the next step
+3. Ensure the project has a cursor rule that references the architecture.md as the source of truth document for architecture plans.
+4. Create a plan for each module document, also relying on the architecture.md so modules can work together. Must include the following in each plan:
+   1. Purpose
+   2. Public API (exact function signatures / interfaces)
+   3. Dependencies (must be interfaces only)
+   4. Data Models
+   5. Acceptance Criteria (in plain English - this becomes the TDD seed)
+   6. Non-Goals
+5. Get the user’s sign off on the plans before continuing
+6. Save the plans to the project repo.
+7. When the user says they are ready, build each plan using the **Module Builder** procedure. You must have the context to build the api for the module correctly.
 
-If isolated worktrees or isolated tasks are available, launch one isolated run per module. If they are not, build modules sequentially. In every case, give the builder (yourself or the isolated task):
+   If isolated worktrees or isolated tasks are available, launch one isolated run per module. If they are not, build modules sequentially and only edit that module’s files. In every case, give the builder (yourself or the isolated task):
 
-- architecture.md path + the module plan path
-- worktree / branch name (or the module directory if there is no worktree)
-- “do not edit other modules”
+   1. architecture.md path + the module plan path
+   2. worktree / branch name (or the module directory if there is no worktree)
+   3. “do not edit other modules”
 
-Merge after review.
-Once the modules have been built, review the work with the **Review** procedure.
-If a module fails the review, repeat the previous step using the feedback from the review
-Once the modules have been built, consolidate any utility functions to maintain DRY standards.
-Write integration tests for how you expect to put the modules together
-Put the modules together to build the software for the user as they have designed it.
+   Merge after review.
+8. Once the modules have been built, review the work with the **Review** procedure.
+   1. If a module fails the review, repeat the previous step using the feedback from the review
+9. Once the modules have been built, consolidate any utility functions to maintain DRY standards.
+10. Write integration tests for how you expect to put the modules together
+11. Put the modules together to build the software for the user as they have designed it.
+12. If you are building any features with a UI, test that the UI works well with your browser tools.
 
 ## Module Builder
 
@@ -110,3 +111,11 @@ Do not approve merely because behavior seems correct. Treat these as presumptive
 - duplicated helper or logic in the wrong layer
 
 If the bar is not met, leave explicit, actionable feedback and rebuild the module with that feedback.
+
+## Summary
+
+1. Ensure the user understands what they are designing
+2. Plan your specific modules based off of the user specs
+3. Build the modules with TDD (Module Builder procedure; isolated tasks if available)
+4. Stich the modules together to build the software
+5. Validate your work

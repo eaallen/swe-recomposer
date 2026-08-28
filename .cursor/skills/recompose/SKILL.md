@@ -13,9 +13,9 @@ The user asks to recompose, flatten, export, make a skills-only pack, or produce
 
 ## Inputs (do not edit unless the user is changing SWE itself)
 
-1. `.cursor/skills/swe/SKILL.md`
-2. `.cursor/agents/swe-module-builder.md`
-3. `source/review/thermo-nuclear-code-quality-review.md`
+1. `src/swe/skills/swe/SKILL.md`
+2. `src/swe/agents/swe-module-builder.md`
+3. `src/review/thermo-nuclear-code-quality-review.md`
 
 ## Targets
 

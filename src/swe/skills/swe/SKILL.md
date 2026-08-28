@@ -32,7 +32,7 @@ Any time the user is asking for a large amount of software to be built or is sta
   5. Acceptance Criteria (in plain English - this becomes the TDD seed)
   6. Non-Goals
 5. Get the user’s sign off on the plans before continuing
-6. Save the plans to the project repo
+6. Save the plans to the project repo.
 7. When the user says they are ready, build each plan concurrently using *swe-module-builder* subagents. You must provide the context to build the api for the module correctly. Launch each subagent in its worktree, and merge after review.
   1. Give the following to the *swe-module-builder* subagent:
     1. [architecture.md](http://architecture.md) path + the module plan path
@@ -43,4 +43,14 @@ Any time the user is asking for a large amount of software to be built or is sta
 9. Once the modules have been built, consolidate any utility functions to maintain DRY standards.
 10. Write integration tests for how you expect to put the modules together
 11. Put the modules together to build the software for the user as they have designed it.
+12. If you are building any features with a UI, test that the UI works well with your browser tools. 
+
+## Summary
+
+1. Ensure the user understands what they are designing
+2. Plan your specific modules based off of the user specs
+3. Build the modules with TDD (and subagents)
+4. Stich the modules together to build the software
+5. Validate your work
+
 
