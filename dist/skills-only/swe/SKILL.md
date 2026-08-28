@@ -18,6 +18,14 @@ Any time the user is asking for a large amount of software to be built or is sta
 
 ## Instructions
 
+### Big Picture
+
+The user will give your their ideas of how the software will work in the form of modules. Module development is good, but do not feel constrained by the user's representation of the module, during architecture and the planing phase, you can decide if you can add new functionality to a module, reuse a module, make a new module etc.
+
+The key is that the user is thinking in a modular way and you are building small testable modules that can independently built and verified to ensure correctness.
+
+### Steps
+
 1. Ensure the user has provided you with their module documents (how the user expects the software to work, broken up into key areas)
    1. If the user does not have any, help them get started.
       1. In three questions or less, understand the goal of their project
