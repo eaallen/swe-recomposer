@@ -38,4 +38,4 @@ Copy `dist/skills-only/swe/` into another project’s `.cursor/skills/` to use S
 
 ## Edit, then recompose
 
-Change SWE itself only in `.cursor/skills/swe/SKILL.md` and `.cursor/agents/swe-module-builder.md`. Then recompose. Do not hand-maintain `dist/`.
+Change SWE itself only in `src/swe/skills/swe/SKILL.md`. Then recompose. Do not hand-maintain `dist/`.

@@ -1,6 +1,6 @@
 ---
 name: recompose
-description: Recompose the canonical SWE skill + swe-module-builder agent into skills-only or a single portable prompt for Grok, Meta.ai, and similar. Use when exporting SWE, flattening subagents, or producing a prompt for another platform.
+description: Recompose the canonical SWE skill into skills-only or a single portable prompt for Grok, Meta.ai, and similar. Use when exporting SWE, flattening the review subagent, or producing a prompt for another platform.
 ---
 
 # Recompose SWE
@@ -14,8 +14,7 @@ The user asks to recompose, flatten, export, make a skills-only pack, or produce
 ## Inputs (do not edit unless the user is changing SWE itself)
 
 1. `src/swe/skills/swe/SKILL.md`
-2. `src/swe/agents/swe-module-builder.md`
-3. `src/review/thermo-nuclear-code-quality-review.md`
+2. `src/review/thermo-nuclear-code-quality-review.md`
 
 ## Targets
 
@@ -37,10 +36,9 @@ Keep every invariant in architecture.md. Translate mechanics as follows:
 **Skills only**
 
 - One skill named `swe`. No `agents/` file required.
-- Inline the module-builder body as a **Module Builder** procedure the same agent must follow.
-- Inline a **Review** section from the thermo-nuclear rubric (keep the approval bar and output order; drop plugin/Task orchestration).
-- Replace “launch swe-module-builder subagents in worktrees” with: if isolated worktrees/tasks exist, use them with this procedure; otherwise build sequentially and only edit that module’s files.
-- Keep sign-off gates, plan sections, TDD, BLOCKERS.md template, DRY, integration tests, assembly.
+- Canonical already builds modules in-process with TDD (no implementation subagents). Keep that.
+- Inline a **Review** section from the thermo-nuclear rubric (keep the approval bar and output order; drop plugin/Task orchestration). Replace “review with thermo-nuclear-code-quality-review” with that inline procedure.
+- Keep sign-off gates, work-named architecture document, plan sections, TDD, BLOCKERS.md template, DRY, integration tests, assembly.
 - Frontmatter: keep `disable-model-invocation: true`. Description must say this is the skills-only recomposition (no named subagents).
 
 **Single prompt (portable / Grok / Meta.ai)**
@@ -48,7 +46,7 @@ Keep every invariant in architecture.md. Translate mechanics as follows:
 - No YAML frontmatter, no Cursor tool names, no MCP, no worktrees.
 - You are the tech lead in one conversation with the user.
 - Modules are sequential. Emit each file as a markdown block the user can save.
-- If the host has no repo, keep `architecture.md`, module plans, and `BLOCKERS.md` as in-chat documents and ask the user to persist them.
+- If the host has no repo, keep the work-named architecture document, module plans, and `BLOCKERS.md` as in-chat documents and ask the user to persist them.
 - Sign-off: do not write implementation until the user explicitly approves plans.
 - TDD: write failing tests, then implementation, then refactor, without waiting during a module — but still stop between *phases* (discovery, architecture, plans, build).
 - Grok: allow web search when facts are needed; prefer long, complete file dumps; user can save into a project.
